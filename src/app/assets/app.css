@@ -1,0 +1,70 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+@import 'fonts.css';
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  background-color:#F9F9F9;
+  font-family: "Lato";
+  font-style: normal;
+}
+
+
+.btn-normal {
+  padding: 11px 20px;
+  background: #f22539;
+  border-radius: 60px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.btn-normal:active {
+  background: #C00E20;
+  color: #ffffff;
+}
+
+.btn-normal.disabled {
+  background: #BFBFBF;
+  color: #ffffff;
+}
+
+.btn-normal:hover {
+  color: #ffffff;
+}
+
+.mt-70 {
+  margin-top: 70px;
+}
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-35 {
+  margin-top: 35px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+
+.mt-18 {
+  margin-top: 18px;
+}
