@@ -1,8 +1,9 @@
 import { inject, injectable } from "inversify";
 import PokemonRepository from "../repository/pokemonRepository";
+import { Pokemon }  from "../../domain/entity";
 
 export interface GetAllPokemons {
-  execute(): Promise<any>;
+  execute(): Promise<Pokemon[]>;
 }
 
 @injectable()
@@ -11,7 +12,7 @@ export class GetAllPokemonsImpl implements GetAllPokemons {
     @inject("PokemonRepository") public productRepo: PokemonRepository
   ) {}
 
-  execute(): Promise<any>{
+  execute(): Promise<Pokemon[]>{
     return this.productRepo.getAll();
   }
 }
