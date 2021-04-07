@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/webapp-pokemons-list/precache-manifest.226a6f257fb44efe0d7afa63a06a17c8.js"
+  "/webapp-pokemons-list/precache-manifest.98acd1922aa23dd3bc9afa1868067c1c.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "webapp-pokemons-list"});

@@ -18,7 +18,7 @@ export default class PokemonRepositoryImpl {
     this._pokemons = [];
   }
 
-  public getAll(): Promise<unknown> {
+  public getAll(): Promise<Pokemon[]> {
     this._pokemons = [];
     return fetch(`https://pokeapi.co/api/v2/pokemon/`)
       .then((resp) => {
@@ -26,9 +26,9 @@ export default class PokemonRepositoryImpl {
       })
       .then((data) => {
         const res = data.results;
-        res.forEach((element: any) => {
+        res.forEach((element: Pokemon) => {
           this._pokemons.push({
-            id: res.findIndex((x: any) => x.name === element.name),
+            id: res.findIndex((x: Pokemon) => x.name === element.name),
             name: element.name,
             weight: 0,
             height: 0,
@@ -41,14 +41,14 @@ export default class PokemonRepositoryImpl {
       });
   }
 
-  public getPokemon(name: string): Promise<unknown> {
+  public getPokemon(name: string): Promise<Pokemon> {
     return fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
       .then((resp) => {
         if (resp.status === 200) return resp.json();
       })
       .then((data) => {
         const typeHolder = data.types.map(
-          (gotoType: any) => gotoType.type
+          (gotoType: { type: string}) => gotoType.type
         );
 
         this._pokemon = {
@@ -56,7 +56,7 @@ export default class PokemonRepositoryImpl {
           name: data.name,
           weight: data.weight,
           height: data.height,
-          types: typeHolder.map((getType: any) => getType.name),
+          types: typeHolder.map((getType: { name: string}) => getType.name),
           isfavorite: false,
         }
       
